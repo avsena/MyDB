@@ -1,0 +1,15 @@
+{
+  "name": "back-end-projeto_venus",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "dependencies": {
+    "mariadb": "^2.5.6",
+    "nodemon": "^2.0.15",
+    "sequelize": "^6.16.1"
+  }
+}
