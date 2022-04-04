@@ -8,3 +8,4 @@ routes.get('/', (req, res) => {
 })
 
 module.exports = routes;
+//o arquivo deve ficar fora da pasta routes
