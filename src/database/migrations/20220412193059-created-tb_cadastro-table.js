@@ -2,14 +2,14 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return await queryInterface.createTable('tb_cadastro',
+    return queryInterface.createTable('tb_cadastro',
 
       {
         id: {
           type: Sequelize.INTERGER,
           allowNull: false,
           autoIncrement: true,
-          primeiryKey: true,
+          primaryKey: true,
         },
 
         nome_cadastro: {
@@ -32,7 +32,7 @@ module.exports = {
           allowNull: false
         },
 
-       cpf: {
+        cpf: {
           type: Sequelize.STRING,
           allowNull: false
         },
@@ -87,7 +87,7 @@ module.exports = {
           allowNull: false
         },
 
-        created_at: {   
+        created_at: {
           type: Sequelize.DATE,
           allowNull: false
         },
@@ -99,14 +99,10 @@ module.exports = {
       })
   },
 
-   down:(queryInterface, Sequelize) => {
-     
-   }
-    /**
-     * Add reverting commands here.
-     *
-     * Example:
-     * await queryInterface.dropTable('users');
-     */
-  
+  down: (queryInterface, Sequelize) => {
+
+    return queryInterface.dropTable('tb_cadastro');
+
+  }
+
 };
