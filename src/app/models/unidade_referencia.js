@@ -1,12 +1,11 @@
 const Sequelize = require('sequelize');
-const bcrypt = require('bcryptjs');
 
-class tb_usuarios extends Model {
+
+class Unidade_referencia extends Model {
     static init(sequelize) {
         super.init(
             {
-                login: Sequelize.STRING,
-                senha: Sequelize.STRING,
+                desc_unidade_referencia: Sequelize.STRING,
             },
             {
                 sequelize,
@@ -16,4 +15,4 @@ class tb_usuarios extends Model {
     }
 
 }
-export default tb_usuarios;
+export default Unidade_referencia;

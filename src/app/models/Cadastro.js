@@ -1,29 +1,42 @@
-//qual a função desse cadastro.js?/
+//criando model tb_cadastro
 
-import Sequelize, { Model } from 'sequelize';
+const Sequelize = require('sequelize');
+const bcrypt = require('bcryptjs');
 
 class Cadastro extends Model {
     static init(sequelize) {
         super.init(
             {
-                name: Sequelize.STRING,
-                path: Sequelize.STRING,
-                type: Sequelize.STRING,
-                url: {
-                    type: Sequelize.VIRTUAL,
-                    get() {
-                        return `${process.env.APP_URL}/uploads/${this.type}/${this.path}`;
-                    },
-                },
+                nome_cadastro: Sequelize.STRING,
+                nome_social_cadastro: Sequelize.STRING,
+                num_cartao_nacional_saude: Sequelize.STRING,
+                cpf: Sequelize.STRING,
+                data_nascimento: Sequelize.DATE,
+                raca: Sequelize.STRING,
+                naturalidade: Sequelize.STRING,
+                endereco: Sequelize.STRING,
+                bairro: Sequelize.STRING,
+                cidade: Sequelize.STRING,
+                cep: Sequelize.STRING,
+
+                //queria saber para que serve esse url, como nÃ£o sabia eu comentei.
+                /* url: {
+                     type: Sequelize.VIRTUAL,
+                     get() {
+                         return `${process.env.APP_URL}/uploads/${this.type}/${this.path}`;
+                     },
+                 }, */
             },
-            { sequelize }
+            {
+                sequelize,
+            }
         );
 
-        return this;
+        // return this;
     }
 
-    static associate(models) {
+    /* static associate(models) {
         this.belongsTo(models.Contact, { foreignKey: 'tb_cadastro', as: 'cadastro' });
-    }
+    }*/
 }
 export default Cadastro;
