@@ -1,11 +1,12 @@
 import { Router } from 'express'
-import loginController from './app/controllers/loginController';
+import UsuarioController from './app/controllers/UsuarioController';
 
-const routes = new Router ();
+const routes = new Router();
 
-// cadastro
+//usuario
 
-routes.post('/login', loginController.create);
+routes.post('/usuario', UsuarioController.create);
+routes.get('/usuario/:id', UsuarioController.index);
 
 
-export default routes 
+export default routes;
