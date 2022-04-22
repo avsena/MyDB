@@ -1,5 +1,4 @@
 import Sequelize, { Model } from 'sequelize';
-const bcrypt = require('bcryptjs');
 
 class Cadastro extends Model {
     static init(sequelize) {
@@ -31,11 +30,12 @@ class Cadastro extends Model {
             }
         );
 
-        // return this;
+        return this;
     }
 
-    /* static associate(models) {
-        this.belongsTo(models.Contact, { foreignKey: 'tb_cadastro', as: 'cadastro' });
-    }*/
+    static associate(models) {
+        this.belongsTo(models.Usuario, { foreignKey: 'id_usuario', as: 'usuario' });
+        this.belongsTo(models.UnidadeReferencia, { foreignKey: 'id_referencia', as: 'unidade_referencia' });
+    }
 }
 export default Cadastro;
