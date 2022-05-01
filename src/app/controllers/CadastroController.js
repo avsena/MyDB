@@ -1,4 +1,4 @@
-import Cadastro from "../models/cadastro";
+import Cadastro from "../models/Cadastro";
 
 class CadastroController {
 
