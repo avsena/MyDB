@@ -1,5 +1,5 @@
 import Sequelize from 'sequelize';
-import Usuario from '../app/models/usuario';
+import Usuario from '../app/models/Usuario';
 import Cadastro from '../app/models/Cadastro';
 import dbConfig from '../config/db';
 import UnidadeReferencia from '../app/models/UnidadeReferencia';
