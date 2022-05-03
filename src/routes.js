@@ -10,7 +10,7 @@ const routes = new Router();
 routes.post('/usuario', UsuarioController.create);
 routes.get('/usuario/:id', UsuarioController.index);
 routes.put('/usuario/:id', UsuarioController.update); //atualizacao - verificar erro
-
+routes.delete('/usuario/:id', UsuarioController.delete);
 
 //cadastro
 
