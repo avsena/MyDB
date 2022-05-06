@@ -4,9 +4,17 @@ class UsuarioController {
 
    //criando login
    async create(req, res) {
-      const { login, senha } = req.body;
+      const { cpf, senha } = req.body;
 
-      if (!login || !senha) return res.status(400).json({ error: 'Bad Request' })
+      if (!cpf || !senha) return res.status(400).json({ error: 'Bad Request' })
+      
+      //verificar cpf válido
+      
+      const userExists = await Usuario.findOne({
+         where: {cpf}
+      })
+
+      if(userExists) return res.status(400).json({error: 'Já existe um usuário com este cpf'})
 
       const createdUsario = await Usuario.create(req.body);
 

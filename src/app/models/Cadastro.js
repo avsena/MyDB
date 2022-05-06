@@ -7,7 +7,6 @@ class Cadastro extends Model {
                 nome: Sequelize.STRING,
                 nome_social: Sequelize.STRING,
                 num_cartao_nacional_saude: Sequelize.STRING,
-                cpf: Sequelize.STRING,
                 data_nascimento: Sequelize.DATE,
                 raca: Sequelize.STRING,
                 naturalidade: Sequelize.STRING,
