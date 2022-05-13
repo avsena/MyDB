@@ -34,7 +34,7 @@ class UnidadeReferenciaController {
            return res.status(404).json({error: 'unidade referencia not found'});
         }
 
-        await UnidadeReferencia.update(req.body); //verificar se está dando erro
+        await unidadeReferencia.update(req.body); //verificar se está dando erro
         
         return res.json(unidadeReferencia);
    }

@@ -1,10 +1,22 @@
 import Cadastro from "../models/Cadastro";
+import Usuario from "../models/Usuario";
 
 class CadastroController {
 
     async create(req, res) {
-        const { nome, nome_social, num_cartao_nacional_saude, cpf, data_nascimento, raca, naturalidade, endereco, bairro, cidade, estado, cep } = req.body;
+        const { nome, nome_social, num_cartao_nacional_saude, cpf, data_nascimento, raca, naturalidade, endereco, bairro, cidade, estado, cep, id_referencia, id_usuario } = req.body;
 
+       const usuarioExiste = await Usuario.findByPk(id_usuario);
+
+       if(!usuarioExiste){
+         return res.status(400).json({error: "Usuário não existe"});
+       }
+
+        const cadastroExiste = await Cadastro.findOne({where: {id_usuario}});
+
+        if(cadastroExiste){
+           return res.status(400).json({error: "Usuário já possui cadastro vinculado"});
+        }
         const createdCadastro = await Cadastro.create(req.body);
 
         return res.json(createdCadastro);
@@ -30,7 +42,7 @@ class CadastroController {
            return res.status(404).json({error: 'user not found'});
         }
 
-        await Cadastro.update(req.body); //verificar se está dando erro
+        await cadastro.update(req.body); //verificar se está dando erro
         
         return res.json(cadastro);
    }

@@ -35,23 +35,23 @@ class UsuarioController {
 
    //atualizando login
    async update(req, res) {
-      const login = await Usuario.findByPk(req.params.id);
+      const usuario = await Usuario.findByPk(req.params.id);
 
-      if (!login) {
+      if (!usuario) {
 
          return res.status(404).json({ error: 'Login updated' });
       }
 
       await usuario.update(req.body); //verificar se está dando erro
 
-      return res.json(login);
+      return res.json(usuario);
    }
 
    //deletando login
    async delete(req, res) {
-      const login = await Usuario.findByPk(req.params.id);
+      const usuario = await Usuario.findByPk(req.params.id);
 
-      if (!login) {
+      if (!usuario) {
 
          return res.status(404).json({ error: 'Login deleted!' });
       }
