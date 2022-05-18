@@ -6,7 +6,7 @@ class UnidadeReferenciaController {
         const { descricao } = req.body;
 
         if(!descricao){
-            return res.status(404).json({erro: 'nao tem descricao'});
+            return res.status(404).json({erro: 'Não tem descrição'});
         }
 
         const createdUnidadeReferencia = await UnidadeReferencia.create(req.body);
@@ -19,7 +19,7 @@ class UnidadeReferenciaController {
 
          if(!unidadeReferencia){
 
-            return res.status(404).json({error: 'Unidade referencia not found'});
+            return res.status(404).json({error: 'Descrição não encontrada'});
          }
 
          return res.json(unidadeReferencia);
@@ -31,7 +31,7 @@ class UnidadeReferenciaController {
 
         if(!unidadeReferencia){
 
-           return res.status(404).json({error: 'unidade referencia not found'});
+           return res.status(404).json({error: 'Descrição não encontrada'});
         }
 
         await unidadeReferencia.update(req.body); //verificar se está dando erro

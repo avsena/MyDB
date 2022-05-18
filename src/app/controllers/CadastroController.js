@@ -27,7 +27,7 @@ class CadastroController {
 
          if(!cadastro){
 
-            return res.status(404).json({error: 'user not found'});
+            return res.status(404).json({error: 'Usuário não encontrado'});
          }
 
          return res.json(cadastro);
@@ -39,10 +39,10 @@ class CadastroController {
 
         if(!cadastro){
 
-           return res.status(404).json({error: 'user not found'});
+           return res.status(404).json({error: 'Usuário não encontrado'});
         }
 
-        await cadastro.update(req.body); //verificar se está dando erro
+        await cadastro.update(req.body); 
         
         return res.json(cadastro);
    }

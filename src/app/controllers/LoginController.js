@@ -27,7 +27,7 @@ class UsuarioController {
 
       if (!login) {
 
-         return res.status(404).json({ error: 'login not found' });
+         return res.status(404).json({ error: 'Usuário não localizado' });
       }
 
       return res.json(login);
@@ -53,7 +53,7 @@ class UsuarioController {
 
       if (!usuario) {
 
-         return res.status(404).json({ error: 'Login deleted!' });
+         return res.status(404).json({ error: 'Usuário deletado' });
       }
 
       await usuario.destroy();
