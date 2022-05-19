@@ -16,5 +16,11 @@ class UnidadeReferencia extends Model {
 
     }
 
+    static associate(models) {
+        
+        /*this.hasMany(models.Cadastro, { foreignKey: 'id_usuario', as: 'usuario' });*/
+    
+}
+
 }
 export default UnidadeReferencia;
