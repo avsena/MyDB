@@ -27,7 +27,7 @@ class CadastroController {
 
          if(!cadastro){
 
-            return res.status(404).json({error: 'Usuário não encontrado'});
+            return res.status(404).json({error: "Cadastro não encontrado"});
          }
 
          return res.json(cadastro);
