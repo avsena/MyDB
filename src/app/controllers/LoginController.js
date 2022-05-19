@@ -39,7 +39,7 @@ class UsuarioController {
 
       if (!usuario) {
 
-         return res.status(404).json({ error: 'Login updated' });
+         return res.status(404).json({ error: 'Login atualizado' });
       }
 
       await usuario.update(req.body); //verificar se está dando erro
