@@ -23,7 +23,9 @@ class UsuarioController {
 
    //procurando login 
    async index(req, res) {
-      const login = await Usuario.findByPk(req.params.id);
+      const login = await Usuario.findByPk(req.params.id, {
+         attributes: {exclude: ['senha']}
+      });
 
       if (!login) {
 

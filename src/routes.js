@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import UsuarioController from './app/controllers/LoginController';
+import UsuarioController from './app/controllers/UsuarioController';
 import CadastroController from './app/controllers/CadastroController';
 import UnidadeReferenciaController from './app/controllers/UnidadeReferenciaController';
 
