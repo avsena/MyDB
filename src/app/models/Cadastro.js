@@ -16,13 +16,6 @@ class Cadastro extends Model {
                 estado: Sequelize.STRING,
                 cep: Sequelize.STRING,
 
-                //queria saber para que serve esse url, como não sabia eu comentei.
-                /* url: {
-                     type: Sequelize.VIRTUAL,
-                     get() {
-                         return `${process.env.APP_URL}/uploads/${this.type}/${this.path}`;
-                     },
-                 }, */
             },
             {
                 sequelize,

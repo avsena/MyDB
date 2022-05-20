@@ -17,5 +17,11 @@ class Usuario extends Model {
 
     }
 
+    static associate(models) {
+
+        this.hasOne(models.Cadastro, { foreignKey: 'id_usuario', as: 'cadastro' });
+
+    }
+
 }
 export default Usuario;
